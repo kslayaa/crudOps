@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="upper-card">
+            <div class="card">
+                <h1>Retrieve</h1>
+                <label for="gid">Enter Id</label>
+                <input id="gid" type="text"/><br><br>
+                <button class="btn" onclick="getUser()">Fetch</button>
+                <div id="result"></div>
+            </div>
+            <div class="card">
+                <h1>Add User</h1>
+                <label for="pid">Enter Id</label>
+                <input id="pid" type="text"/><br><br>
+                <label for="pname">Enter Name</label>
+                <input id="pname" type="text"/><br><br>
+                <label for="pemail">Enter Email</label>
+                <input id="pemail" type="text"/><br><br>
+                <button class="btn" onclick="postUser()">Add User</button>
+            </div>
+            <div class="card">
+                <h1>Update User</h1>
+                <label for="uid">Enter Id</label>
+                <input id="uid" type="text"/><br><br>
+                <label for="uname">Enter Name</label>
+                <input id="uname" type="text"/><br><br>
+                <label for="uemail">Enter Email</label>
+                <input id="uemail" type="text"/><br><br>
+                <button class="btn" onclick="putUser()">Update User</button>
+            </div>
+            <div class="card">
+                <h1>Delete User</h1>
+                <label for="did">Enter Id</label>
+                <input id="did" type="text"/><br><br>
+                <button class="btn" onclick="deleteUser()">Delete User</button>
+            </div>
+            <button onclick="getAllUsers()">get all</button>
+        </div>
+        <div class="lower-card" id="all">
+            
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
