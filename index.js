@@ -1,24 +1,46 @@
 function getUser(){
     let id=document.getElementById("gid").value 
-    let result = document.getElementById("result");
-    result.textContent=""
+    let result = document.getElementById("all");
+    
     fetch(`http://localhost:3000/userDetails/${id}`,{method:"GET"})
     .then(res=>res.json())
-    .then(data=>result.insertAdjacentHTML('beforeEnd',`name:${data.name}<br>
-        email:${data.email}`))
+    .then(data=>{
+        result.textContent=""
+        let tr=document.createElement("tr");
+        let td1=document.createElement("td");
+        td1.textContent=data.id;
+        let td2=document.createElement("td");
+        td2.textContent=data.name;
+        let td3=document.createElement("td");
+        td3.textContent=data.email;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        result.appendChild(tr);
+    })
     // let s=`hi<br>you<br>${id}`
     // document.write(s)
 }
 
 function getAllUsers(){
-    let res=document.getElementById("all");
-    res.textContent=""
+    let re=document.getElementById("all");
+    re.textContent=""
     
     fetch("http://localhost:3000/userDetails/",{method:"GET"})
     .then(res=>res.json())
-    .then(data=>data.forEach(ele=>{
-        let s=`id:${ele.id}<br>name:${ele.name}<br>email:${ele.email}<br><br>`
-        res.insertAdjacentHTML('beforeEnd',s)
+    .then(dataall=>dataall.forEach(data=>{
+        
+        let tr=document.createElement("tr");
+        let td1=document.createElement("td");
+        td1.textContent=data.id;
+        let td2=document.createElement("td");
+        td2.textContent=data.name;
+        let td3=document.createElement("td");
+        td3.textContent=data.email;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        re.appendChild(tr);
     }))
     //res.textContent=s;
     
@@ -68,7 +90,7 @@ function putUser(){
         body:JSON.stringify(newUser)
     })
     .then(res=>res.json())
-    //getAllUsers()
+    //.then(data=>)
     
  
 }

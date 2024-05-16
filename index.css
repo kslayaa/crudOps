@@ -1,0 +1,26 @@
+/* .container{
+    display:flex;
+    flex-direction: column;
+
+    padding:20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+} */
+.upper-card{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.cardg{
+    margin:10px;
+} 
+.lower-card{
+    margin-top:30px;
+}
+
+table{
+    width:100%;
+    border:2px solid black;
+    margin-bottom:100px;
+}
